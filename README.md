@@ -58,7 +58,7 @@ export AWS_DEFAULT_REGION=yourregion
 
 # 4) Execute Shell
 ## Open project directory
-```cd /Users/bruno/workspace/yourproject`
+```cd /Users/bruno/workspace/yourproject
 ```
 
 ## Last commit variable
