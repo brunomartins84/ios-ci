@@ -69,6 +69,6 @@ export DATE_TIME=$(date +%d-%m-%Y--%T)
 curl -H "Content-Type: application/json" -X POST -d '{"name":"'$BUILD_NUMBER'", "link":"itms-services://?action=download-manifest&url=https://s3.amazonaws.com/yourproject/'$BUILD_NUMBER'-manifest.plist","branch":"'"$NEW_BRANCH"'", "production": false, "platform":"ios", "changelog":"'"$CHANGE_LOG"'", "date":"'$DATE_TIME'"}' http://yourprojects.com.br/
 
 # 4) Post-Build Actions
-**/*.*
+`**/*.*`
 
 brunomartins84[at]yahoo[dot]com[dot]br
