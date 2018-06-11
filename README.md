@@ -44,7 +44,7 @@ mv /Users/bruno/jobs/yourproject/builds/$BUILD_NUMBER/archive/yourproject/yourpr
         </dict>
     </array>
 </dict>
-</plist>```
+</plist>
 
 # 3) Execute Shell
 export AWS_ACCESS_KEY_ID=yourkeyid
