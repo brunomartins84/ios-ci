@@ -11,11 +11,11 @@ mv /Users/bruno/jobs/yourproject/builds/$BUILD_NUMBER/archive/yourproject/yourpr
 
 # 2) Create and Upload Text File (Plugin)
 ## File Path
-```/Users/bruno/jobs/yourproject/builds/$BUILD_NUMBER/archive/yourproject/$BUILD_NUMBER-manifest.plist
-```
+/Users/bruno/jobs/yourproject/builds/$BUILD_NUMBER/archive/yourproject/$BUILD_NUMBER-manifest.plist
 
 ## Text File Content
-```<?xml version="1.0" encoding="UTF-8"?>
+```
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -49,7 +49,8 @@ mv /Users/bruno/jobs/yourproject/builds/$BUILD_NUMBER/archive/yourproject/yourpr
 ```
 
 # 3) Execute Shell
-```export AWS_ACCESS_KEY_ID=yourkeyid
+```
+export AWS_ACCESS_KEY_ID=yourkeyid
 export AWS_SECRET_ACCESS_KEY=youraccesskey
 export AWS_DEFAULT_REGION=yourregion
 /usr/local/bin/aws s3 cp /Users/bruno/jobs/yourprojectbuild/builds/$BUILD_NUMBER/archive/yourproject/$BUILD_NUMBER-manifest.plist s3://yourproject/
