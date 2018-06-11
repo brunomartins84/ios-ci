@@ -58,12 +58,10 @@ export AWS_DEFAULT_REGION=yourregion
 
 # 4) Execute Shell
 ## Open project directory
-```cd /Users/bruno/workspace/yourproject
-```
+`cd /Users/bruno/workspace/yourproject`
 
 ## Last commit variable
-```export CHANGE_LOG="$(git log -1 --pretty=format:%s $GIT_COMMIT)"
-```
+`export CHANGE_LOG="$(git log -1 --pretty=format:%s $GIT_COMMIT)"`
 
 ## Defining new variables
 ```export NEW_BRANCH=`echo $GIT_BRANCH | awk -Forigin/ '{print $2}'`<br />
