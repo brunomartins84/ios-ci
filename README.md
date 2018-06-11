@@ -9,7 +9,6 @@ xcodebuild -exportArchive -archivePath /tmp/yourproject.xcarchive -exportPath /U
 mv /Users/bruno/jobs/yourproject/builds/$BUILD_NUMBER/archive/yourproject/yourproject.ipa /Users/bruno/jobs/yourproject/builds/$BUILD_NUMBER/archive/yourproject/$BUILD_NUMBER-yourproject.ipa
 
 # 2) Create and Upload Text File (Plugin)
-
 ## File Path
 /Users/bruno/jobs/yourproject/builds/$BUILD_NUMBER/archive/yourproject/$BUILD_NUMBER-manifest.plist
 
@@ -45,6 +44,7 @@ mv /Users/bruno/jobs/yourproject/builds/$BUILD_NUMBER/archive/yourproject/yourpr
     </array>
 </dict>
 </plist>
+```
 
 # 3) Execute Shell
 export AWS_ACCESS_KEY_ID=yourkeyid
