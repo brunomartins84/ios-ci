@@ -64,13 +64,11 @@ export AWS_DEFAULT_REGION=yourregion
 `export CHANGE_LOG="$(git log -1 --pretty=format:%s $GIT_COMMIT)"`
 
 ## Defining new variables
-```export NEW_BRANCH=echo $GIT_BRANCH | awk -Forigin/ '{print $2}'<br />
+export NEW_BRANCH=echo $GIT_BRANCH | awk -Forigin/ '{print $2}'<br />
 export DATE_TIME=$(date +%d-%m-%Y--%T)
-```
 
 ## Post method using curl
-```curl -H "Content-Type: application/json" -X POST -d '{"name":"'$BUILD_NUMBER'", "link":"itms-services://?action=download-manifest&url=https://s3.amazonaws.com/yourproject/'$BUILD_NUMBER'-manifest.plist","branch":"'"$NEW_BRANCH"'", "production": false, "platform":"ios", "changelog":"'"$CHANGE_LOG"'", "date":"'$DATE_TIME'"}' http://yourprojects.com.br/
-```
+curl -H "Content-Type: application/json" -X POST -d '{"name":"'$BUILD_NUMBER'", "link":"itms-services://?action=download-manifest&url=https://s3.amazonaws.com/yourproject/'$BUILD_NUMBER'-manifest.plist","branch":"'"$NEW_BRANCH"'", "production": false, "platform":"ios", "changelog":"'"$CHANGE_LOG"'", "date":"'$DATE_TIME'"}' http://yourprojects.com.br/
 
 # 4) Post-Build Actions
 `**/*.*`
