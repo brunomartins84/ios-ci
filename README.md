@@ -2,7 +2,8 @@
 # Continuous Integration using Jenkins to build iOS applications
 
 # 1) Execute Shell
-```export NEW_BRANCH=echo $GIT_BRANCH | awk -Forigin/ '{print $2}'<br />
+```
+export NEW_BRANCH=echo $GIT_BRANCH | awk -Forigin/ '{print $2}'<br />
 git clone -b $NEW_BRANCH http://git.example.com.br/yourproject/ios.git<br />
 xcodebuild -workspace /tmp/yourproject/yourproject.xcworkspace -scheme yourscheme -archivePath /tmp/yourproject.xcarchive archive<br />
 xcodebuild -exportArchive -archivePath /tmp/yourproject.xcarchive -exportPath /Users/bruno/jobs/yourproject/builds/$BUILD_NUMBER/archive/yourproject/ -exportOptionsPlist /Users/bruno/Downloads/novo-plist/ExportOptions.plist<br />
@@ -65,11 +66,13 @@ export AWS_DEFAULT_REGION=yourregion
 `export CHANGE_LOG="$(git log -1 --pretty=format:%s $GIT_COMMIT)"`
 
 ## Defining new variables
-export NEW_BRANCH=echo $GIT_BRANCH | awk -Forigin/ '{print $2}'<br />
+```
+export NEW_BRANCH=echo $GIT_BRANCH | awk -Forigin/ '{print $2}'
 export DATE_TIME=$(date +%d-%m-%Y--%T)
+```
 
 ## Post method using curl
-curl -H "Content-Type: application/json" -X POST -d '{"name":"'$BUILD_NUMBER'", "link":"itms-services://?action=download-manifest&url=https://s3.amazonaws.com/yourproject/'$BUILD_NUMBER'-manifest.plist","branch":"'"$NEW_BRANCH"'", "production": false, "platform":"ios", "changelog":"'"$CHANGE_LOG"'", "date":"'$DATE_TIME'"}' http://yourprojects.com.br/
+`curl -H "Content-Type: application/json" -X POST -d '{"name":"'$BUILD_NUMBER'", "link":"itms-services://?action=download-manifest&url=https://s3.amazonaws.com/yourproject/'$BUILD_NUMBER'-manifest.plist","branch":"'"$NEW_BRANCH"'", "production": false, "platform":"ios", "changelog":"'"$CHANGE_LOG"'", "date":"'$DATE_TIME'"}' http://yourprojects.com.br/`
 
 # 4) Post-Build Actions
 `**/*.*`
